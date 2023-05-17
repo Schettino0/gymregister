@@ -1,0 +1,32 @@
+<h1>Registros</h1>
+<h3>Money </h3>
+<div class="nombres">
+<h2>Nicolas : ${{deudaNico.monto}} </h2>
+<h2>Eduardo : ${{deudaEdu.monto}}</h2>
+</div>
+
+
+<table> 
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Comentarios</th>
+            <th>¿Realizo ejercicio?</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each jDatos}}
+        <tr>
+            <td>{{this.nombre}}</td>
+            <td>{{this.fecha}}</td>
+            <td>{{this.descripcion}}</td>
+            <td>{{this.realizo}}</td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>
+
+
+

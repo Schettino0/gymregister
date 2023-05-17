@@ -1,0 +1,54 @@
+<form id="signupForm">
+    <h1>Registro de Ejercicios</h1>
+
+
+    <label for="opcion">Nombre:</label>
+    <div class="nombres">
+        <input type="radio" id="nicolas" name="opcion" value="Nicolas">
+        <label for="nicolas">Nicolás</label>
+        <input type="radio" id="eduardo" name="opcion" value="Eduardo">
+        <label for="eduardo">Eduardo</label>
+    </div>
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" required>
+
+    <label for="descripcion">Comentarios (opcional):</label>
+    <textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea>
+    <div class="ejercicio">
+
+        <input type="radio" id="realizo_ejercicio" name="realizo_ejercicio" value="✅">
+        <label for="realizo_ejercicio">Realizó ejercicio</label><br>
+
+        <input type="radio" id="no_realizo_ejercicio" name="realizo_ejercicio" value="❌">
+        <label for="no_realizo_ejercicio">No realizó ejercicio</label><br><br>
+    </div>
+
+    <input type="submit" value="Enviar">
+
+    <div class="menu">
+        <ul>
+            <li><a href="/datos">Ver datos</a></li>
+        </ul>
+    </div>
+</form>
+
+
+<script>
+    var maxChecked = 1; // Cambia este valor para permitir más o menos selecciones
+    var checkboxes = document.querySelectorAll('input[type=checkbox]');
+    var checkedCount = 0;
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener('change', function () {
+            if (this.checked) {
+                checkedCount++;
+                if (checkedCount > maxChecked) {
+                    this.checked = false;
+                    checkedCount--;
+                }
+            } else {
+                checkedCount--;
+            }
+        });
+    }
+</script>
+<script src="/js/home.js"></script>
